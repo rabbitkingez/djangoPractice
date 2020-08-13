@@ -59,3 +59,10 @@ def modConStudent(request):
     s_qs.save()
 
     return HttpResponseRedirect(reverse('students:stuAll'))
+
+
+def delConStudent(request):
+    qs = Student.objects.get(studentName=name)
+    qs.delete()
+
+    return HttpResponseRedirect(reverse('students:stuAll'))
