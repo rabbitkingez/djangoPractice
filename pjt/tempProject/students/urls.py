@@ -19,6 +19,6 @@ from . import views
 
 app_name = 'students' # app name을 명시하여 목시적 구분
 urlpatterns = [
-    path('reg/', views.regStudent),
-    path('students/', include('students.urls')), # 각 application의 urls.py 위치를 등록함
+    path('reg/', views.regStudent, name='reg'),
+    path('regCon/', views.regConStudent, name='regCon')
 ]
