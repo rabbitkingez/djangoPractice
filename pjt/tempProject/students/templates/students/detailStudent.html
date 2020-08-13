@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta http-equiv="content-type" content="text/html"; charset=UTF-8>
+        <title>Title</title>
+    </head>
+
+    <body>
+        <p> Detail Student</p>
+
+        {% if student_info %}
+            name: {{student_info.studentName}}</br>    
+            name: {{student_info.studentMajor}}</br>    
+            name: {{student_info.studentAge}}</br>    
+            name: {{student_info.studentGrade}}</br>    
+            name: {{student_info.studentGender}}</br>    
+        {% else %}
+            <p>student: 0</p>
+        {% endif %}
+        </br>
+        <a href="#none">수정</a>
+        <a href="#none">삭제</a>
+        <a href="{% url 'students:all' %}">학생리스트</a>
+        <a href="{% url 'students:reg' %}">신규학생등록</a>
+    </body>
+</html>

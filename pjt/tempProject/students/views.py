@@ -24,10 +24,15 @@ def regConStudent(request):
     )
     qs.save()
 
-    return HttpResponseRedirect(reverse('student:stuAll'))
+    return HttpResponseRedirect(reverse('students:stuAll'))
 
 
 def reaStudentAll(request):
     qs = Student.objects.all()
     context = {'student_list': qs}
-    return render(request, 'students/readStudents.html')
+    return render(request, 'students/readStudents.html', context)
+
+def detStudent(request, name):
+    qs = Student.objects.get(studentName = name)
+    context = {'student_info' : qs}
+    return render(request, 'students/detailStudent.html', context)
