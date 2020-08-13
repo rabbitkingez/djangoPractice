@@ -19,9 +19,9 @@
             <p>student: 0</p>
         {% endif %}
         </br>
-        <a href="#none">수정</a>
+        <a href="{% url 'students:stuMod' student_info.studentName %}">수정</a>
         <a href="#none">삭제</a>
-        <a href="{% url 'students:all' %}">학생리스트</a>
+        <a href="{% url 'students:stuAll' %}">학생리스트</a>
         <a href="{% url 'students:reg' %}">신규학생등록</a>
     </body>
 </html>

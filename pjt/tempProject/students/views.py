@@ -36,3 +36,26 @@ def detStudent(request, name):
     qs = Student.objects.get(studentName = name)
     context = {'student_info' : qs}
     return render(request, 'students/detailStudent.html', context)
+
+def reaStudentOne(request, name):
+    qs = Student.objects.get(studentName = name)
+    context = {'student_info' : qs}
+    return render(request, 'students/modifyStudent.html', context)
+
+def modConStudent(request):
+    name = request.POST['name']
+    major = request.POST['major']
+    age = request.POST['age']
+    grade = request.POST['grade']
+    gender = request.POST['gender']
+
+    s_qs = Student.objects.get(studentName=name)
+    s_qs.studentName = name
+    s_qs.studentMajor = major
+    s_qs.studentAge = age
+    s_qs.studentGrade = grade
+    s_qs.studentGender = gender
+
+    s_qs.save()
+
+    return HttpResponseRedirect(reverse('students:stuAll'))

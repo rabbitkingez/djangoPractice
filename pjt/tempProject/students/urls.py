@@ -21,6 +21,8 @@ app_name = 'students' # app name을 명시하여 목시적 구분
 urlpatterns = [
     path('reg/', views.regStudent, name='reg'),
     path('regCon/', views.regConStudent, name='regCon'),
-    path('all/', views.reaStudentAll, name='stuAll')
-    path('det/', views.detStudent, name='sutDet')
+    path('all/', views.reaStudentAll, name='stuAll'),
+    path('<str:name>/det/', views.detStudent, name='stuDet'),
+    path('<str:name>/mod/', views.reaStudentOne, name='stuMod')
+    path('modCon/', views.modConStudent, name='modCon')
 ]
