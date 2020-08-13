@@ -25,3 +25,9 @@ def regConStudent(request):
     qs.save()
 
     return HttpResponseRedirect(reverse('student:stuAll'))
+
+
+def reaStudentAll(request):
+    qs = Student.objects.all()
+    context = {'student_list': qs}
+    return render(request, 'students/readStudents.html')
