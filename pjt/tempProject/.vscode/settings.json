@@ -1,0 +1,10 @@
+{
+    "sqltools.connections": [
+        {
+            "database": "${workspaceFolder:tempProject}/db.sqlite3",
+            "driver": "SQLite",
+            "name": "students",
+            "previewLimit": 50
+        }
+    ]
+}
